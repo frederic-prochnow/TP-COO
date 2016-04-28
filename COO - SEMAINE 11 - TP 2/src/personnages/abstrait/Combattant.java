@@ -1,4 +1,5 @@
 package personnages.abstrait;
+import personnages.concret.*;
 
 public interface Combattant extends Vivant{
 

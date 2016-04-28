@@ -12,7 +12,7 @@ public abstract class Personnage implements Vivant{
 	 * @return le force
 	 */
 	public int getForce() {
-		return force;
+		return this.force;
 	}
 	/**
 	 * @param force le force à définir
@@ -24,67 +24,49 @@ public abstract class Personnage implements Vivant{
 	 * @return le nom
 	 */
 	public String getNom() {
-		return nom;
+		return this.nom;
 	}
 	/**
 	 * @return le vie
 	 */
 	public int getVie() {
-		return vie;
+		return this.vie;
 	}
 	
-	Personnage() {
-		this.force = 10;
-		this.vie = 100;
+	public Personnage() {
 	}
 	
-	Personnage(String nom) {
+	public Personnage(String nom) {
 		this.nom = nom;
 		this.force = 10;
 		this.vie = 100;
 	}
 	
-	/* !CodeTemplates.overridecomment.nonjd!
-	 * @see personnages.abstrait.Vivant#attaque(personnages.abstrait.Vivant)
-	 */
-	@Override
-	public void attaque(Vivant vivant) {
-		// TODO Stub de la méthode généré automatiquement
+	
+	public void attaque(Vivant v) {
+		v.perte(this.getForce());
+	}
+	
+	public void subitattaque(Vivant v) {
+		this.perte(v.getForce());
+	}
+	
+	public void perte(int degats) {
+		this.vie = this.vie - degats;
 		
 	}
-	/* !CodeTemplates.overridecomment.nonjd!
-	 * @see personnages.abstrait.Vivant#subitattaque(personnages.abstrait.Vivant)
-	 */
-	@Override
-	public void subitattaque(Vivant vivant) {
-		// TODO Stub de la méthode généré automatiquement
-		
-	}
-	/* !CodeTemplates.overridecomment.nonjd!
-	 * @see personnages.abstrait.Vivant#perte(int)
-	 */
-	@Override
-	public void perte(int perte) {
-		// TODO Stub de la méthode généré automatiquement
-		
-	}
-	/* !CodeTemplates.overridecomment.nonjd!
-	 * @see personnages.abstrait.Vivant#estVivant()
-	 */
-	@Override
+	
 	public boolean estVivant() {
-		// TODO Stub de la méthode généré automatiquement
-		return false;
+		if(this.vie > 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	
-	/* !CodeTemplates.overridecomment.nonjd!
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
 	public String toString() {
-		return "Personnage [nom=" + nom + ", vie=" + vie + ", force=" + force + ", numeroPersonnage=" + numeroPersonnage
-				+ "]";
+		return "Personnage [nom=" + this.nom + ", vie=" + this.vie + ", force=" + this.force ;
 	}
 	
 }	

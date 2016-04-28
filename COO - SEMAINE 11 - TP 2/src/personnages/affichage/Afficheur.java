@@ -2,7 +2,7 @@ package personnages.affichage;
 
 import java.awt.Graphics;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 public class Afficheur {
 	
@@ -14,8 +14,10 @@ public class Afficheur {
 	private int lignes;
 	private int colonnes;
 	
-	Afficheur(String s1, String[][] s2, int[][] i1) {
-		
+	Afficheur(String titre, String[][] chemins, int[][] niveaux) {
+		JFrame fenetre = new JFrame(titre);
+		// chemins ???
+		// niveaux ???
 	}
 	
 	public void paintComponent(Graphics g) {

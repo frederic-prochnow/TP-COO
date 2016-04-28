@@ -7,7 +7,7 @@ public interface Vivant {
 	
 	public void attaque(Vivant vivant);
 	public void subitattaque(Vivant vivant);
-	public void perte(int perte);
+	public void perte(int degats);
 	public int getForce();
 	public boolean estVivant();
 }
