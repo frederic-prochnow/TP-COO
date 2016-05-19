@@ -13,7 +13,9 @@ public enum Diplome {
 		this.nom=nom;
 	}
 	
-	public String getNom(){return nom;}
+	public String getNom(){
+		return nom;
+	}
 	
 	public static void afficheTout(){
 		for (int i=0;i<Diplome.values().length;i++) {
